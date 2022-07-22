@@ -10,6 +10,9 @@ class homePage : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home_page)
     }
+
+
+
     companion object{
         fun getIntent(context: Context): Intent {
             return  Intent(context, ucookSignup::class.java)

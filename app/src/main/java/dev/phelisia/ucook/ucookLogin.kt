@@ -1,5 +1,6 @@
 package dev.phelisia.ucook
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -23,6 +24,11 @@ class ucookLogin : AppCompatActivity() {
 
             startActivity(ucookSignup.getIntent(this))
         }
+        binding.tvLogin.setOnClickListener {
+            startActivity(homePage.getIntent(this))
+
+        }
+
     }
 
     private fun validateLogin() {
@@ -46,4 +52,10 @@ class ucookLogin : AppCompatActivity() {
 
     }
 
+    companion object {
+        fun getIntent(context: Context): Intent {
+            return Intent(context, ucookLogin::class.java)
+        }
+
+    }
 }
