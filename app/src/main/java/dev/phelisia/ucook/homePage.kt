@@ -13,9 +13,10 @@ class homePage : AppCompatActivity() {
 
 
 
+
     companion object{
         fun getIntent(context: Context): Intent {
-            return  Intent(context, ucookSignup::class.java)
+            return  Intent(context, homePage::class.java)
         }
 
     }

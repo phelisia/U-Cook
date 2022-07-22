@@ -9,51 +9,101 @@ import dev.phelisia.ucook.databinding.ActivityUcookSignupBinding
 
 class ucookSignup : AppCompatActivity() {
     lateinit var binding: ActivityUcookSignupBinding
+    private var isNameValid = false
+    private var isEmailValid = false
+    private var isPasswordValid = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding=ActivityUcookSignupBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.tvLogin.setOnClickListener {
-            startActivity(homePage.getIntent(this))
-
+            startActivity(Intent(this, ucookLogin::class.java))
         }
 
         binding.btnSignup.setOnClickListener {
-            validateSignup()
-            startActivity(homePage.getIntent(this))
+            signUp()
+        }
+    }
 
+    private fun signUp() {
+        validateSignup()
+
+        if (isValidSignUp()) {
+            goToHomepage()
+        }
+    }
+
+    private fun validateSignup() {
+        validateName()
+        validateEmail()
+        validatePassword()
+    }
+
+    /**
+     * Validate the first and second name
+     */
+    private fun validateName() {
+        val name = binding.etUser.text.toString()
+
+
+        isNameValid = name.isBlank().not()
+
+        if (name.isBlank()) {
+            binding.tilUser.error = "First name required"
+        } else {
+            binding.tilUser.error = null
         }
 
 
     }
-    fun validateSignup(){
-        var name=binding.etUser.text.toString()
-        var email=binding.etEmail.text.toString()
-        if (name.isBlank()){
-            binding.tilUser.error="user name required"
+
+    /**
+     * Validate the email address
+     */
+    private fun validateEmail() {
+        if (binding.etEmail.text.toString().isBlank()) {
+            binding.tilEmail.error = "invalid email"
+            isEmailValid = false
+        } else {
+            binding.tilEmail.error = null
+            isEmailValid = true
         }
-        if (email.isBlank()){
-            binding.tilEmail.error="email required"
+    }
 
-        }
+    /**
+     * Validate the password
+     */
+    private fun validatePassword() {
+        val confirm = binding.etConfirm.text.toString()
+        val password = binding.etPassword.text.toString()
 
-
-        var confirm=binding.etConfirm.text.toString()
-        var password=binding.etPassword.text.toString()
         if (confirm.isBlank()) {
             binding.tilConfirm.error = "confirm password"
         } else {
             binding.tilConfirm.error = null
         }
-        if (password.isBlank()){
-            binding.tilPassword.error="enter password"
+
+        if (password.isBlank()) {
+            binding.tilPassword.error = "enter password"
+        } else {
+            binding.tilPassword.error = null
         }
-        if (confirm==password){
-            binding.btnSignup
+
+        if (confirm == password && confirm.isBlank().not() && password.isBlank().not()) {
+            binding.tilConfirm.error = null
+            isPasswordValid = true
+        } else {
+            isPasswordValid = false
+            binding.tilConfirm.error = "invalid"
         }
-        else{
-            binding.tilConfirm.error = "invalid password"
-        }
+    }
+
+    private fun isValidSignUp(): Boolean {
+        return isNameValid && isEmailValid && isPasswordValid
+    }
+
+    private fun goToHomepage() {
+        startActivity(Intent(this, homePage::class.java))
     }
 
     companion object{

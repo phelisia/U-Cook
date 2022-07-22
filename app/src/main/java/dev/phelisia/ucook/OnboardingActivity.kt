@@ -99,7 +99,7 @@ class OnboardingActivity : AppCompatActivity() {
                 it.setImageDrawable(
                     ContextCompat.getDrawable(
                         applicationContext,
-                        R.drawable.indicator_inactive_background
+                        R.drawable.icon_outer_background
                     )
                 )
                 it.layoutParams = layoutParams
