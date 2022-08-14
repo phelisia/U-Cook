@@ -13,7 +13,7 @@ import dev.phelisia.ucook.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
 private lateinit var binding :FragmentHomeBinding
-
+private lateinit var adapter: HomeAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,12 +31,14 @@ private lateinit var binding :FragmentHomeBinding
     }
     fun displayHomeImage(){
 //        binding.rvhomedisplay.layoutManager= LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL,false)
+        adapter= HomeAdapter()
         binding.rvhomedisplay.layoutManager=GridLayoutManager(requireContext(),1)
-        binding.rvhomedisplay.adapter=HomeAdapter(createHomeImageList())
+        binding.rvhomedisplay.adapter= adapter
+        adapter.items=createHomeViewItems()
     }
 
 
-    fun createHomeViewItems():List<HomeRecyclerViewItems>{
+    fun createHomeViewItems():MutableList<HomeRecyclerViewItems>{
         val homeViewItems= mutableListOf<HomeRecyclerViewItems>()
         val categoriesHeader=HomeRecyclerViewItems.CategoriesHeader
 
