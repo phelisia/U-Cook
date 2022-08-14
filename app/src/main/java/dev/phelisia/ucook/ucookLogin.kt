@@ -2,12 +2,9 @@ package dev.phelisia.ucook
 
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import dev.phelisia.ucook.databinding.ActivityHomePageBinding
-import dev.phelisia.ucook.databinding.ActivityOnboardingBinding
+import androidx.appcompat.app.AppCompatActivity
 import dev.phelisia.ucook.databinding.ActivityUcookLoginBinding
-import dev.phelisia.ucook.databinding.ActivityUcookSignupBinding
 
 class ucookLogin : AppCompatActivity() {
     lateinit var binding: ActivityUcookLoginBinding
