@@ -149,4 +149,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tvhomesee"
         app:layout_constraintTop_toTopOf="@+id/tvhomesee" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvtrendingdisplay"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView5"
+        tools:listitem="@layout/trending_list" />
 </androidx.constraintlayout.widget.ConstraintLayout>
