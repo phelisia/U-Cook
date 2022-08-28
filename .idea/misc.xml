@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../layout/custom_preview.xml" value="0.18931159420289856" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1995" />
         <entry key="app/src/main/res/drawable-xhdpi/drawable.xml" value="0.1995" />
         <entry key="app/src/main/res/drawable/custom_background.xml" value="0.162" />
@@ -21,6 +22,8 @@
         <entry key="app/src/main/res/layout/activity_ucook_login.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_ucook_signup.xml" value="0.15" />
         <entry key="app/src/main/res/layout/activity_welcome_page.xml" value="0.19375" />
+        <entry key="app/src/main/res/layout/container_items.xml" value="0.19270833333333334" />
+        <entry key="app/src/main/res/layout/explore_item.xml" value="0.19270833333333334" />
         <entry key="app/src/main/res/layout/explore_list_item.xml" value="0.19270833333333334" />
         <entry key="app/src/main/res/layout/fragment_explore.xml" value="0.15364583333333334" />
         <entry key="app/src/main/res/layout/fragment_favourite.xml" value="0.15364583333333334" />

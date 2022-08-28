@@ -5,13 +5,20 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import dev.phelisia.ucook.databinding.FragmentExploreBinding
 import dev.phelisia.ucook.databinding.FragmentHomeBinding
 
 class ExploreFragment : Fragment() {
     private lateinit var binding : FragmentExploreBinding
-
+    private lateinit var linearLayout: LinearLayout
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var adapter: HeadExploreAdapter
+    private val listOfRecipes = ExploreRecipe.get()
+    private val listOfFilter =
+        listOf(ExploreFilter.ALL, ExploreFilter.CATEGORY, ExploreFilter.CUISINE, ExploreFilter.TIME)
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,6 +34,11 @@ class ExploreFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 //        setuptoolbar()
         displayexploreImages()
+
+       binding.linearLayout.exploreContainer
+        recyclerView .exploreRecyclerView
+        createExploreItem()
+        setAdapter()
 
 }
     fun displayexploreImages(){
@@ -54,12 +66,41 @@ class ExploreFragment : Fragment() {
         return allimage
     }
 
+
+
+
+    private fun setAdapter() {
+        adapter = HeadExploreAdapter()
+        recyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
+        recyclerView.adapter = adapter
+        adapter.setData(listOfRecipes, ExploreFilter.ALL)
+
+    }
+
+    private fun createExploreItem() {
+        listOfFilter.forEach {
+            val container = ExploreFilterItem(it, requireContext(),this)
+            linearLayout.addView(container)
+        }
+    }
+
+    override fun onClick(filter: ExploreFilter) {
+        adapter.setData(listOfRecipes, filter)
+    }
+
+
+
+
 //
 //    fun setuptoolbar(){
 //        setSupportActionBar(binding.tbexplore)
 //        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 //        supportActionBar?.setDisplayShowTitleEnabled(false)
 //    }
+
+
+
+
     companion object {
 
     }

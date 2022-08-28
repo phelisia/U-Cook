@@ -11,7 +11,8 @@ import dev.phelisia.ucook.databinding.FragmentFavouriteBinding
 import dev.phelisia.ucook.databinding.FragmentHomeBinding
 
 
-class FavouriteFragment : Fragment() {
+class
+FavouriteFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
