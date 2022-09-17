@@ -25,7 +25,8 @@
         <entry key="app/src/main/res/layout/container_items.xml" value="0.19270833333333334" />
         <entry key="app/src/main/res/layout/explore_item.xml" value="0.19270833333333334" />
         <entry key="app/src/main/res/layout/explore_list_item.xml" value="0.19270833333333334" />
-        <entry key="app/src/main/res/layout/fragment_explore.xml" value="0.15364583333333334" />
+        <entry key="app/src/main/res/layout/found_item.xml" value="0.19270833333333334" />
+        <entry key="app/src/main/res/layout/fragment_explore.xml" value="0.18" />
         <entry key="app/src/main/res/layout/fragment_favourite.xml" value="0.15364583333333334" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.18" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.15364583333333334" />
