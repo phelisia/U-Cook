@@ -7,14 +7,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
-import com.google.android.material.tabs.TabLayout
-import com.google.android.material.tabs.TabLayoutMediator
-import dev.phelisia.ucook.databinding.FragmentCategoryBinding
+import dev.phelisia.ucook.databinding.FragmentAllBinding
 import dev.phelisia.ucook.databinding.FragmentCuisineBinding
 
-class CategoryFragment : Fragment() {
-    private lateinit var binding: FragmentCategoryBinding
+class AllFragment : Fragment() {
+    private lateinit var binding: FragmentAllBinding
     private var listeners: ExploreListener?=null
+
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -25,12 +24,11 @@ class CategoryFragment : Fragment() {
             throw ClassCastException()
         }
     }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentCategoryBinding.inflate(inflater, container, false)
+        binding = FragmentAllBinding.inflate(inflater, container, false)
 
         return binding.root
     }
@@ -44,15 +42,15 @@ class CategoryFragment : Fragment() {
     }
 
     fun displayTrendingImage() {
-        binding.rvcategory.layoutManager = GridLayoutManager(requireContext(), 2)
-        binding.rvcategory.adapter = HomeAdapter(listeners,createHomeImageList())
+        binding.rvall.layoutManager = GridLayoutManager(requireContext(), 2)
+        binding.rvall.adapter = HomeAdapter(listeners,createHomeImageList())
     }
 
     fun createHomeImageList(): List<HomeItem> {
         var imageone = HomeItem(
             "Main course",
             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUwZNU2pblGn2qeL4U7BKE8UdhK_zxwU60Iw&usqp=CAU",
-            "lorem ispum lorem ispum lorem ispum"
+            "cloremispum lorem ispum"
         )
         var imagetwo = HomeItem(
             "Appetizers",

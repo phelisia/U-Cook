@@ -26,10 +26,14 @@
         <entry key="app/src/main/res/layout/explore_item.xml" value="0.19270833333333334" />
         <entry key="app/src/main/res/layout/explore_list_item.xml" value="0.19270833333333334" />
         <entry key="app/src/main/res/layout/found_item.xml" value="0.19270833333333334" />
-        <entry key="app/src/main/res/layout/fragment_explore.xml" value="0.18" />
+        <entry key="app/src/main/res/layout/fragment_all.xml" value="0.19375" />
+        <entry key="app/src/main/res/layout/fragment_category.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_cuisine.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_explore.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_favourite.xml" value="0.15364583333333334" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.18" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.15364583333333334" />
+        <entry key="app/src/main/res/layout/fragment_time.xml" value="0.19375" />
         <entry key="app/src/main/res/layout/home_categories_header.xml" value="0.19270833333333334" />
         <entry key="app/src/main/res/layout/home_images_list.xml" value="0.15260416666666668" />
         <entry key="app/src/main/res/layout/nav_header.xml" value="0.25" />

@@ -4,9 +4,11 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import dev.phelisia.ucook.databinding.ActivityHomePageBinding
 
-class homePage : AppCompatActivity() {
+class HomePageActivity : AppCompatActivity() ,ExploreListener{
+
     lateinit var binding :ActivityHomePageBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,8 +48,15 @@ class homePage : AppCompatActivity() {
 
     companion object{
         fun getIntent(context: Context): Intent {
-            return  Intent(context, homePage::class.java)
+            return  Intent(context, HomePageActivity::class.java)
         }
+
+    }
+
+    override fun onItemClicked(homeItem: HomeItem) {
+
+        // createfound item activity here you use parceable
+        startActivity(FoundItemActivity.getIntent(this,homeItem))
 
     }
 }

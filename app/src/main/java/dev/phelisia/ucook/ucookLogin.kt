@@ -79,7 +79,7 @@ class ucookLogin : AppCompatActivity() {
     }
 
     private fun goToHomepage() {
-        startActivity(homePage.getIntent(this))
+        startActivity(HomePageActivity.getIntent(this))
     }
 
     companion object {

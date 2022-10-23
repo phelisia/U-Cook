@@ -1,6 +1,5 @@
 package dev.phelisia.ucook
 
-import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -103,7 +102,7 @@ class ucookSignup : AppCompatActivity() {
     }
 
     private fun goToHomepage() {
-        startActivity(Intent(this, homePage::class.java))
+        startActivity(Intent(this, HomePageActivity::class.java))
     }
 
     companion object{

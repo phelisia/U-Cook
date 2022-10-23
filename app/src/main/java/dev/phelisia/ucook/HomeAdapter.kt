@@ -6,8 +6,9 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import dev.phelisia.ucook.databinding.HomeImagesListBinding
+import kotlinx.android.synthetic.main.activity_found_item.view.*
 
-class HomeAdapter(var imageList: List<HomeItem>) : RecyclerView.Adapter<ImageViewHolder>() {
+class HomeAdapter(val listeners: ExploreListener?, var imageList: List<HomeItem>) : RecyclerView.Adapter<ImageViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ImageViewHolder {
         var binding = HomeImagesListBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         var imageViewHolder = ImageViewHolder(binding)
@@ -26,12 +27,11 @@ class HomeAdapter(var imageList: List<HomeItem>) : RecyclerView.Adapter<ImageVie
             .into(holder.binding.ivfood)
         val context = holder.itemView.context
         holder.binding.ivfood.setOnClickListener {
-            Toast.makeText(
-                context,
-                "you have clicked on ${currentimages}the image",
-                Toast.LENGTH_SHORT
-            ).show()
+            listeners?.onItemClicked(currentimages)
+
         }
+
+
     }
 
 
